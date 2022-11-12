@@ -21,23 +21,23 @@ public class DocumentsRepoImpl implements DocumentsRepo {
     }
 
     @Override
-    public Document read(Integer regNum) {
+    public Document read(Integer registrationNumber) {
         return documentsDatabase.getDocuments()
                 .stream()
-                .filter(doc -> doc.getRegistrationNumber().equals(regNum))
+                .filter(doc -> doc.getRegistrationNumber().equals(registrationNumber))
                 .findAny()
                 .orElse(null);
     }
 
     @Override
-    public int update(Integer regNum, Person author) {
-        read(regNum).setAuthor(author);
+    public int update(Integer registrationNumber, Person documentAuthor) {
+        read(registrationNumber).setDocumentAuthor(documentAuthor);
         return 1;
     }
 
     @Override
-    public boolean delete(Integer regNum) {
-        return documentsDatabase.getDocuments().removeIf(doc -> doc.getRegistrationNumber().equals(regNum));
+    public boolean delete(Integer registrationNumber) {
+        return documentsDatabase.getDocuments().removeIf(doc -> doc.getRegistrationNumber().equals(registrationNumber));
     }
 
     @Override

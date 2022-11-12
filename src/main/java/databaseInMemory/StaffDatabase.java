@@ -1,15 +1,8 @@
 package databaseInMemory;
 
-import dto.Departments;
-import dto.Organizations;
-import dto.Persons;
 import entitiy.staff.Department;
 import entitiy.staff.Organization;
 import entitiy.staff.Person;
-import manager.Manager;
-
-import javax.xml.bind.JAXBException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StaffDatabase {

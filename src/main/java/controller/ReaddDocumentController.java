@@ -4,7 +4,7 @@ import controller.document.BaseDocumentController;
 import entitiy.documents.Document;
 import manager.Manager;
 
-public class FindDocumentController extends BaseDocumentController {
+public class ReaddDocumentController extends BaseDocumentController {
 
     public void findDocument() {
             String registrationNumber = getRegistrationNumber();

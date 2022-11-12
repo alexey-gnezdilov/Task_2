@@ -4,7 +4,7 @@ import entitiy.documents.Document;
 import entitiy.staff.Person;
 import manager.Manager;
 
-public class EditDocumentController extends BaseDocumentController {
+public class UpdateDocumentController extends BaseDocumentController {
 
     private static final String FULL_NAME_REGULAR_EXPRESSION =
             Manager.CUSTOM_SYSTEM_UTIL.getPropertyValue("FULL_NAME_REGULAR_EXPRESSION");
@@ -30,9 +30,9 @@ public class EditDocumentController extends BaseDocumentController {
             //вынести подписи в константы
         Manager.DOCUMENTS_REPO.update(Integer.parseInt(registrationNumber), inputNewAuthor());
         System.out.println(DOCUMENT_SUCCESSFULLY_CHANGED);
-        System.out.println("Before: " + previousDocument + " " + previousDocument.getAuthor() + "\n");
+        System.out.println("Before: " + previousDocument + " " + previousDocument.getDocumentAuthor() + "\n");
         Document document = Manager.DOCUMENTS_REPO.read(Integer.parseInt(registrationNumber));
-        System.out.println("After: " + document + " " + document.getAuthor());
+        System.out.println("After: " + document + " " + document.getDocumentAuthor());
         Manager.CUSTOM_SYSTEM_UTIL.delay();
     }
 

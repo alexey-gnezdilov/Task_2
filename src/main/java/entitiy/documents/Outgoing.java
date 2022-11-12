@@ -17,14 +17,14 @@ public class Outgoing extends Document{
 
     public Outgoing(
             UUID id,
-            String type,
-            String text,
-            Integer regNum,
-            LocalDate regDate,
-            Person author,
+            String documentType,
+            String documentText,
+            Integer registrationNumber,
+            LocalDate registrationDate,
+            Person documentAuthor,
             Organization recipientOrganization,
             String deliveryMethod) {
-        super(id, type, text, regNum, regDate, author);
+        super(id, documentType, documentText, registrationNumber, registrationDate, documentAuthor);
         this.recipientOrganization = recipientOrganization;
         this.deliveryMethod = deliveryMethod;
     }

@@ -15,34 +15,34 @@ import java.util.UUID;
 public abstract class Document implements Comparable<Document>, Storable, Cloneable{
 
     private UUID id;
-    private String type;
-    private String text;
+    private String documentType;
+    private String documentText;
     private Integer registrationNumber;
     private LocalDate registrationDate;
-    private transient Person author;
+    private transient Person documentAuthor;
 
     public Document(
             UUID id,
-            String type,
-            String text,
+            String documentType,
+            String documentText,
             Integer registrationNumber,
             LocalDate registrationDate,
-            Person author) {
+            Person documentAuthor) {
         this.id = id;
-        this.type = type;
-        this.text = text;
+        this.documentType = documentType;
+        this.documentText = documentText;
         this.registrationNumber = registrationNumber;
         this.registrationDate = registrationDate;
-        this.author = author;
+        this.documentAuthor = documentAuthor;
     }
 
     @Override
     public String toString() {
         return String.format("%s       № %s at %s %s",
-                getType(),
+                getDocumentType(),
                 getRegistrationNumber(),
                 getRegistrationDate(),
-                getText());
+                getDocumentText());
     }
 
     @Override
@@ -55,16 +55,22 @@ public abstract class Document implements Comparable<Document>, Storable, Clonea
         }
         Document doc = (Document) o;
         return id.equals(doc.id) &&
-                type.equals(doc.type) &&
-                text.equals(doc.text) &&
+                documentType.equals(doc.documentType) &&
+                documentText.equals(doc.documentText) &&
                 registrationNumber.equals(doc.registrationNumber) &&
                 registrationDate.equals(doc.registrationDate) &&
-                author.equals(doc.author);
+                documentAuthor.equals(doc.documentAuthor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, text, registrationNumber, registrationDate, author);
+        return Objects.hash(
+                id,
+                documentType,
+                documentText,
+                registrationNumber,
+                registrationDate,
+                documentAuthor);
     }
 
     @Override

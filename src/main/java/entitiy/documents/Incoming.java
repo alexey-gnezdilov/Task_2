@@ -19,16 +19,16 @@ public class Incoming extends Document{
 
     public Incoming(
             UUID id,
-            String type,
-            String text,
-            Integer regNum,
-            LocalDate regDate,
-            Person author,
+            String documentType,
+            String documentText,
+            Integer registrationNumber,
+            LocalDate registrationDate,
+            Person documentAuthor,
             Person sender,
             Department recipientDepartment,
             Integer outNumber,
             LocalDate outRegistrationDate) {
-        super(id, type, text, regNum, regDate, author);
+        super(id, documentType, documentText, registrationNumber, registrationDate, documentAuthor);
         this.sender = sender;
         this.recipientDepartment = recipientDepartment;
         this.outNumber = outNumber;

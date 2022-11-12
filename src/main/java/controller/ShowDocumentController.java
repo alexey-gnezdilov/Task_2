@@ -22,7 +22,7 @@ public class ShowDocumentController extends BaseDocumentController {
         Manager.DOCUMENTS_REPO.getDocuments()
                 .stream()
                 .sorted()
-                .collect(Collectors.groupingBy(Document::getAuthor))
+                .collect(Collectors.groupingBy(Document::getDocumentAuthor))
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByKey())
@@ -44,7 +44,7 @@ public class ShowDocumentController extends BaseDocumentController {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             Manager.DOCUMENTS_REPO.getDocuments()
                     .stream()
-                    .collect(Collectors.groupingBy(Document::getAuthor))
+                    .collect(Collectors.groupingBy(Document::getDocumentAuthor))
                     .forEach((key, value) -> {
                         String file = String.format("src/reports/%s.json", key.getFullName());
                         try (FileWriter fileWriter = new FileWriter(file)) {

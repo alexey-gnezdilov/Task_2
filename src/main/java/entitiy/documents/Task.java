@@ -3,7 +3,6 @@ package entitiy.documents;
 import entitiy.staff.Person;
 import lombok.Getter;
 import lombok.Setter;
-
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -19,17 +18,17 @@ public class Task extends Document{
 
     public Task(
             UUID id,
-            String type,
-            String text,
-            Integer regNum,
-            LocalDate regDate,
-            Person author,
+            String documentType,
+            String documentText,
+            Integer registrationNumber,
+            LocalDate registrationDate,
+            Person documentAuthor,
             String issueDate,
             String executionTerm,
             Person responsibleExecutor,
             String controllerSign,
             Person controller) {
-        super(id, type, text, regNum, regDate, author);
+        super(id, documentType, documentText, registrationNumber, registrationDate, documentAuthor);
         this.issueDate = issueDate;
         this.executionTerm = executionTerm;
         this.responsibleExecutor = responsibleExecutor;

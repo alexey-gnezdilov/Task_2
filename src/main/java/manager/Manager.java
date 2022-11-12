@@ -3,7 +3,7 @@ package manager;
 import controller.*;
 import controller.document.CreateDocumentController;
 import controller.document.DeleteDocumentController;
-import controller.document.EditDocumentController;
+import controller.document.UpdateDocumentController;
 import dto.Departments;
 import dto.Organizations;
 import dto.Persons;
@@ -31,8 +31,8 @@ public class Manager {
     public static final StartController START_UP_CONTROLLER;
     public static final CreateDocumentController CREATE_CONTROLLER;
     public static final DeleteDocumentController DELETE_CONTROLLER;
-    public static final EditDocumentController EDIT_CONTROLLER;
-    public static final FindDocumentController FIND_CONTROLLER;
+    public static final UpdateDocumentController EDIT_CONTROLLER;
+    public static final ReaddDocumentController FIND_CONTROLLER;
     public static final ShowDocumentController SHOW_CONTROLLER;
 
     public static final DocumentsRepo DOCUMENTS_REPO;
@@ -51,8 +51,8 @@ public class Manager {
         START_UP_CONTROLLER = new StartController();
         CREATE_CONTROLLER = new CreateDocumentController();
         DELETE_CONTROLLER = new DeleteDocumentController();
-        EDIT_CONTROLLER = new EditDocumentController();
-        FIND_CONTROLLER = new FindDocumentController();
+        EDIT_CONTROLLER = new UpdateDocumentController();
+        FIND_CONTROLLER = new ReaddDocumentController();
         SHOW_CONTROLLER = new ShowDocumentController();
 
         DOCUMENTS_REPO = new DocumentsRepoImpl();

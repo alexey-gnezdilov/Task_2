@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface DocumentsRepo {
     boolean create(Document document);
-    Document read(Integer regNum);
-    int update(Integer regNum, Person author);
-    boolean delete(Integer regNum);
+    Document read(Integer registrationNumber);
+    int update(Integer registrationNumber, Person documentAuthor);
+    boolean delete(Integer registrationNumber);
     List<Document> getDocuments();
     boolean documentListIsEmpty();
 }
