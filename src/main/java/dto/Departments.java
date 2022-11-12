@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "departments.xml")
+@XmlRootElement(name = "departments")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Setter
 public class Departments extends AbstractDTO<Department>{

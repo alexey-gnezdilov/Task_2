@@ -4,6 +4,12 @@ import controller.*;
 import controller.document.CreateDocumentController;
 import controller.document.DeleteDocumentController;
 import controller.document.EditDocumentController;
+import dto.Departments;
+import dto.Organizations;
+import dto.Persons;
+import entitiy.staff.Department;
+import entitiy.staff.Organization;
+import entitiy.staff.Person;
 import repository.StaffRepo;
 import repository.impl.StaffRepoImpl;
 import service.docservices.DocumentFactory;
@@ -14,6 +20,9 @@ import repository.DocumentsRepo;
 import repository.impl.DocumentsRepoImpl;
 import util.CustomSystemUtil;
 import util.impl.CustomSystemUtilImpl;
+
+import javax.xml.bind.JAXBException;
+import java.util.List;
 
 public class Manager {
 
@@ -33,15 +42,11 @@ public class Manager {
 
     public static final CustomSystemUtil CUSTOM_SYSTEM_UTIL;
 
-    public static final PersonService AUTHORS_REPORT;
-
     static {
 
         CUSTOM_SYSTEM_UTIL = new CustomSystemUtilImpl();
 
         JAXB_SERVICE = new JaxbServiceImpl();
-
-        STAFF_REPO = new StaffRepoImpl();
 
         START_UP_CONTROLLER = new StartController();
         CREATE_CONTROLLER = new CreateDocumentController();
@@ -51,10 +56,21 @@ public class Manager {
         SHOW_CONTROLLER = new ShowDocumentController();
 
         DOCUMENTS_REPO = new DocumentsRepoImpl();
+        STAFF_REPO = new StaffRepoImpl(
+                dataBaseLoader(Person.class, Persons.class, "persons"),
+                dataBaseLoader(Department.class, Departments.class, "departments"),
+                dataBaseLoader(Organization.class, Organizations.class, "organizations")
+        );
 
         DOCUMENT_FACTORY = new DocumentFactoryImpl();
-
-        AUTHORS_REPORT = new PersonServiceImpl();
     }
 
+    @SuppressWarnings({"unchecked"})
+    private static <T> List<T> dataBaseLoader(Class<T> loadClass, Class dtoClass, String pathName) {
+        try {
+            return Manager.JAXB_SERVICE.unmarshalling(dtoClass, loadClass, pathName);
+        } catch (JAXBException e) {
+            return null;
+        }
+    }
 }

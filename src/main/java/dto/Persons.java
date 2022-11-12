@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "persons.xml")
+@XmlRootElement(name = "persons")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Setter
 public class Persons extends AbstractDTO<Person>{

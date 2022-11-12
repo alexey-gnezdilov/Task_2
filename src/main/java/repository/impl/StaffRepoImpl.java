@@ -11,7 +11,12 @@ public class StaffRepoImpl implements StaffRepo {
 
     private final StaffDatabase staffDatabase;
 
-    public StaffRepoImpl() { staffDatabase = new StaffDatabase(); }
+    public StaffRepoImpl(
+            List<Person> persons,
+            List<Department> departments,
+            List<Organization> organizations) {
+        staffDatabase = new StaffDatabase(persons, departments, organizations);
+    }
 
     @Override
     public List<Person> getPersons() { return staffDatabase.getPersons();}

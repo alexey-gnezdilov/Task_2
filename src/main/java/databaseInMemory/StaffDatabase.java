@@ -18,10 +18,13 @@ public class StaffDatabase {
     private List<Department> departments;
     private List<Organization> organizations;
 
-    public StaffDatabase() {
-        this.persons = dataBaseLoader(Person.class, Persons.class, "persons.xml");
-        this.departments = dataBaseLoader(Department.class, Departments.class, "departments.xml");
-        this.organizations = dataBaseLoader(Organization.class, Organizations.class, "organizations.xml");
+    public StaffDatabase(
+            List<Person> persons,
+            List<Department> departments,
+            List<Organization> organizations) {
+        this.persons = persons;
+        this.departments = departments;
+        this.organizations = organizations;
     }
 
     public List<Person> getPersons() { return persons;}
@@ -30,12 +33,4 @@ public class StaffDatabase {
     }
     public List<Organization> getOrganizations() { return organizations; }
 
-    @SuppressWarnings({"unchecked"})
-    private static <T> List<T> dataBaseLoader(Class<T> loadClass, Class dtoClass, String pathName) {
-        try {
-            return Manager.JAXB_SERVICE.unmarshalling(dtoClass, loadClass, pathName);
-        } catch (JAXBException e) {
-            return null;
-        }
-    }
 }
