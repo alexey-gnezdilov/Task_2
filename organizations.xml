@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<organizations>
+    <organization>
+        <id>516198</id>
+        <fullName>ВТБ</fullName>
+        <shortName>ВТБ</shortName>
+        <director>Алексей Петрович Макаренков</director>
+        <contactNumber>88001002424</contactNumber>
+    </organization>
+    <organization>
+        <id>516145</id>
+        <fullName>Сбербанк</fullName>
+        <shortName>Сбербанк</shortName>
+        <director>Константин Петрович Ломакин</director>
+        <contactNumber>900</contactNumber>
+    </organization>
+    <organization>
+        <id>516166</id>
+        <fullName>Альфа-Банк</fullName>
+        <shortName>Альфа-Банк</shortName>
+        <director>Виктор Степанович Иванов</director>
+        <contactNumber>88001002424</contactNumber>
+    </organization>
+    <organization>
+        <id>516133</id>
+        <fullName>Тинькофф</fullName>
+        <shortName>Тинькофф</shortName>
+        <director>Олег Тинькофф</director>
+        <contactNumber>1000</contactNumber>
+    </organization>
+    <organization>
+        <id>516114</id>
+        <fullName>Открытие</fullName>
+        <shortName>Открытие</shortName>
+        <director>Борис Робертович Куменко</director>
+        <contactNumber>373733</contactNumber>
+    </organization>
+</organizations>

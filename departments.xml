@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<departments>
+    <department>
+        <id>585198</id>
+        <fullName>Экономический отдел</fullName>
+        <shortName>Экономический отдел</shortName>
+        <director>Оксана Константиновна Попова</director>
+        <contactNumber>856</contactNumber>
+    </department>
+    <department>
+        <id>517145</id>
+        <fullName>Отдел по информационным технологиям</fullName>
+        <shortName>Отдел по информационным технологиям</shortName>
+        <director>Зоя Викторовна Шмайнер</director>
+        <contactNumber>745</contactNumber>
+    </department>
+    <department>
+        <id>517266</id>
+        <fullName>Отдел кадров</fullName>
+        <shortName>Отдел кадров</shortName>
+        <director>Виктория Викторовна Иванова</director>
+        <contactNumber>546</contactNumber>
+    </department>
+    <department>
+        <id>916133</id>
+        <fullName>Отдел материального обеспечния</fullName>
+        <shortName>Отдел материального обеспечния</shortName>
+        <director>Оксана Константиновна Сливко</director>
+        <contactNumber>753</contactNumber>
+    </department>
+    <department>
+        <id>8516114</id>
+        <fullName>Отдел управления</fullName>
+        <shortName>Отдел управления</shortName>
+        <director>Карла Васильевна Сидорова</director>
+        <contactNumber>742</contactNumber>
+    </department>
+</departments>
